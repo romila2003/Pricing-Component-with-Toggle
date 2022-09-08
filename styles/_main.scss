@@ -1,0 +1,130 @@
+@use "utilities";
+
+.container {
+    max-width: 450px;
+    width: 100%;
+
+    @media (min-width: 800px) {
+        display: flex;
+        flex-direction: row;
+        max-width: 1000px;
+    }
+    .box {
+        border-radius: 10px;
+        margin-bottom: 2em;
+        padding: 1.5em 2em;
+        text-align: center;
+        box-shadow: 10px 10px 20px utilities.$dark-grayish-blue-op;
+
+        @media (min-width: 800px) {
+            width: 500px;
+            padding-top: 2.5em;
+            margin-bottom: unset;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            padding: 0.4em 0 0.5em 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                font-size: 2rem;
+            }
+            
+        }
+
+        .price, .storage, .users, .max {
+            border-bottom: 1px solid utilities.$light-grayish-blue-op;
+        }
+
+        .storage, .users, .max {
+            font-size: 0.8rem;
+            padding: 1.2em 0;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 2em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 7px;
+            padding: 1em;
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: inherit;
+            font-size: 0.75rem;
+            outline: none;
+        }
+    }
+
+    .non-active {
+      background-color: white;
+        p {
+            color: utilities.$grayish-blue;
+        }
+
+        .price {
+            color: utilities.$dark-grayish-blue;
+        }
+
+        button {
+            background: utilities.$gradient-btn;
+            color: utilities.$very-light-grayish-blue;
+
+            &:hover {
+                outline: 1px solid utilities.$purple;
+                background: transparent;
+                color: utilities.$purple;
+            }
+        }
+    }
+
+    .active {
+        background: utilities.$gradient-box;
+        color: utilities.$very-light-grayish-blue;
+
+        @media (min-width: 800px) {
+            margin-top: -1.5em;
+            margin-bottom: -1.5em;
+        }
+
+        button {
+            background-color: utilities.$very-light-grayish-blue;
+            color: utilities.$purple;
+
+            @media (min-width: 800px) {
+                margin-top: 4em;
+            }
+    
+
+            &:hover {
+                outline: 1px solid utilities.$very-light-grayish-blue;
+                background: transparent;
+                color: utilities.$very-light-grayish-blue;
+            }
+        }
+    }
+}
+
+footer {
+    margin-bottom: 1em;
+    font-size: 12px; 
+    text-align: center;
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+    
+    @media (min-width: 800px) {
+        position: absolute;
+        bottom: 10px;
+    }
+}
+
+.priceToggle::after {
+    content: "9";
+    font-size: 3.5rem;
+}

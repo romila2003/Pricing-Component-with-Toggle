@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-image: url("/images/bg-top.svg");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: top right -50%;
+  background-color: hsl(240deg, 78%, 98%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+@media (min-width: 800px) {
+  body {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/images/bg-top.svg"), url("/images/bg-bottom.svg");
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    background-size: 20%;
+  }
+}
+
+header {
+  text-align: center;
+  padding-top: 4em;
+  margin-bottom: 1em;
+}
+@media (min-width: 800px) {
+  header {
+    padding: unset;
+    margin-bottom: 4em;
+  }
+}
+header h1 {
+  color: hsl(233deg, 13%, 49%);
+  margin-bottom: 1em;
+}
+header .flex {
+  display: flex;
+  align-items: center;
+}
+header .flex h2 {
+  color: hsl(234deg, 14%, 74%);
+  font-size: 1rem;
+  margin-top: -10px;
+}
+header .flex h2:first-of-type {
+  margin-right: 1em;
+}
+header .flex h2:last-of-type {
+  margin-left: 1em;
+}
+header button {
+  position: relative;
+  border: none;
+  width: 70px;
+  padding: 1.3em 0;
+  background: linear-gradient(90deg, hsl(236deg, 72%, 79%), hsl(237deg, 63%, 64%));
+  margin-bottom: 1em;
+  border-radius: 100px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+header button .circle {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: hsl(240deg, 78%, 98%);
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+header button .toggleBtn {
+  transform: translate(-130%, -50%);
+}
+header .bg {
+  background: linear-gradient(90deg, hsl(237deg, 49%, 85%), hsl(237deg, 60%, 75%));
+}
+
+.container {
+  max-width: 450px;
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+  }
+}
+.container .box {
+  border-radius: 10px;
+  margin-bottom: 2em;
+  padding: 1.5em 2em;
+  text-align: center;
+  box-shadow: 10px 10px 20px hsla(232deg, 13%, 33%, 0.1);
+}
+@media (min-width: 800px) {
+  .container .box {
+    width: 500px;
+    padding-top: 2.5em;
+    margin-bottom: unset;
+  }
+}
+.container .box .price {
+  font-size: 3.5rem;
+  padding: 0.4em 0 0.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .box .price span {
+  font-size: 2rem;
+}
+.container .box .price, .container .box .storage, .container .box .users, .container .box .max {
+  border-bottom: 1px solid hsla(234deg, 14%, 74%, 0.5);
+}
+.container .box .storage, .container .box .users, .container .box .max {
+  font-size: 0.8rem;
+  padding: 1.2em 0;
+}
+.container .box button {
+  width: 100%;
+  margin-top: 2em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 7px;
+  padding: 1em;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: inherit;
+  font-size: 0.75rem;
+  outline: none;
+}
+.container .non-active {
+  background-color: white;
+}
+.container .non-active p {
+  color: hsl(233deg, 13%, 49%);
+}
+.container .non-active .price {
+  color: hsl(232deg, 13%, 33%);
+}
+.container .non-active button {
+  background: linear-gradient(90deg, hsl(236deg, 72%, 79%), hsl(237deg, 63%, 64%));
+  color: hsl(240deg, 78%, 98%);
+}
+.container .non-active button:hover {
+  outline: 1px solid hsl(237deg, 63%, 64%);
+  background: transparent;
+  color: hsl(237deg, 63%, 64%);
+}
+.container .active {
+  background: linear-gradient(180deg, hsl(236deg, 72%, 79%), hsl(237deg, 63%, 64%));
+  color: hsl(240deg, 78%, 98%);
+}
+@media (min-width: 800px) {
+  .container .active {
+    margin-top: -1.5em;
+    margin-bottom: -1.5em;
+  }
+}
+.container .active button {
+  background-color: hsl(240deg, 78%, 98%);
+  color: hsl(237deg, 63%, 64%);
+}
+@media (min-width: 800px) {
+  .container .active button {
+    margin-top: 4em;
+  }
+}
+.container .active button:hover {
+  outline: 1px solid hsl(240deg, 78%, 98%);
+  background: transparent;
+  color: hsl(240deg, 78%, 98%);
+}
+
+footer {
+  margin-bottom: 1em;
+  font-size: 12px;
+  text-align: center;
+}
+footer a {
+  color: hsl(228deg, 45%, 44%);
+}
+@media (min-width: 800px) {
+  footer {
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+.priceToggle::after {
+  content: "9";
+  font-size: 3.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

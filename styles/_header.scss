@@ -1,0 +1,97 @@
+@use "utilities";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+    background-image: url("/images/bg-top.svg");
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: top right -50%;
+    background-color: utilities.$very-light-grayish-blue;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+
+    @media (min-width: 800px) {
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background-image: url("/images/bg-top.svg"), url("/images/bg-bottom.svg");
+        background-repeat: no-repeat;
+        background-position: top right, bottom left;
+        background-size: 20%;
+    }
+}
+
+header {
+    text-align: center;
+    padding-top: 4em;
+    margin-bottom: 1em;
+
+    @media (min-width: 800px) {
+        padding: unset;
+        margin-bottom: 4em;
+    }
+
+    h1 {
+        color: utilities.$grayish-blue;
+        margin-bottom: 1em;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            color: utilities.$light-grayish-blue;
+            font-size: 1rem;
+            margin-top: -10px;
+        }
+
+        h2:first-of-type {
+            margin-right: 1em;
+        }
+
+        h2:last-of-type {
+            margin-left: 1em;
+        }
+    }
+    
+    
+
+    button {
+        position: relative;
+        border: none;
+        width: 70px;
+        padding: 1.3em 0;
+        background: utilities.$gradient-btn;
+        margin-bottom: 1em;
+        border-radius: 100px;
+        box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.1);
+
+        .circle {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: utilities.$very-light-grayish-blue;
+            top: 50%;
+            right: 5px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .toggleBtn {
+            transform: translate(-130%, -50%);
+        }
+    }
+
+    .bg {
+        background: utilities.$gradient-btn-op;;
+    }
+}
+
